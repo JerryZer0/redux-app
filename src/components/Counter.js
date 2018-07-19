@@ -14,6 +14,13 @@ export default class Counter extends Component {
         multiple(this.props.index, multipaler)
     }
 
+    asynchronous = () => {
+        const delayer = this.props.onIncrement
+        const index = this.props.index
+        setTimeout(function(){delayer(index)},1000)
+        
+    }
+
     render() {
         const { value, onIncrement, onDecrement, index } = this.props
         // console.log(value)
@@ -21,15 +28,18 @@ export default class Counter extends Component {
             <p>
                 Clicked: {value} times
                 {' '}
-                <button onClick={()=>onIncrement(index)}>
+                <button className="button" onClick={() => onIncrement(index)}>
                     +
                 </button>
-                <button onClick={()=>onDecrement(index)}>
+                <button className="button" onClick={() => onDecrement(index)}>
                     -
                 </button>
                 <input type="text" defaultValue="0" ref={this.inputText} />
-                <button onClick={this.calculate}>
+                <button className="button" onClick={this.calculate}>
                     x
+                </button>
+                <button className="button" onClick={this.asynchronous}>
+                    asynchronous
                 </button>
             </p >
 
@@ -37,29 +47,3 @@ export default class Counter extends Component {
     }
 }
 
-
-
-    // constructor(props) {
-    //     super(props);
-    //     this.inputText = React.createRef()
-    // }
-
-
-    // calculate = () => {
-    //     const multipaler = this.props.onMultipaler
-    //     return multipaler(this.inputText.current.value)
-    // }
-
-    // render() {
-    //     return (
-
-    //         <p>
-    //             Clicked: {state} times {' '}
-    //             <button onClick={onIncrement}>+</button>
-    //             <button onClick={onDecrement}>-</button>
-    //             <input type="text" defaultValue="0" ref={this.inputText} />
-    //             <button onClick={this.calculate}>x multipaler</button>
-    //         </p >
-
-    //     )
-    // }

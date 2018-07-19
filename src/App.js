@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Counters from './components/CounterGroup'
+import logo from './logo.svg';
+import './App.css';
 
 export default class App extends Component {
 
@@ -10,6 +12,10 @@ export default class App extends Component {
   render() {
     return (
       <div className="App" >
+      <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        <br />
         <Counters amount={2}/>
       </div>
     );

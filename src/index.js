@@ -14,21 +14,3 @@ ReactDOM.render(
     </Provider>,
     rootEl
 )
-
-// render()
-// store.subscribe(render)
-
-
-// const render = () => ReactDOM.render(
-//     <App
-//         state={store.getState()}
-//         onIncrement={() => store.dispatch(increment())}
-//         onDecrement={() => store.dispatch(decrement())}
-//         onMultipaler={(num) => store.dispatch(multiplication(num))}
-//     />,
-
-//     rootEl
-// )
-
-// render()
-// store.subscribe(render)
