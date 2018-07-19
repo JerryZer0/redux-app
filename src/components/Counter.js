@@ -14,7 +14,7 @@ export default class Counter extends Component {
         multiple(this.props.index, multipaler)
     }
 
-    asynchronous = () => {
+    layer = () => {
         const delayer = this.props.onIncrement
         const index = this.props.index
         setTimeout(function(){delayer(index)},1000)
@@ -34,12 +34,12 @@ export default class Counter extends Component {
                 <button className="button" onClick={() => onDecrement(index)}>
                     -
                 </button>
-                <input type="text" defaultValue="0" ref={this.inputText} />
+                <input type="text" placeholder="0" ref={this.inputText} />
                 <button className="button" onClick={this.calculate}>
                     x
                 </button>
-                <button className="button" onClick={this.asynchronous}>
-                    asynchronous
+                <button className="button" onClick={this.layer}>
+                    layer
                 </button>
             </p >
 
