@@ -1,39 +1,17 @@
 import React, { Component } from 'react';
+import Counters from './components/CounterGroup'
 
-class App extends Component {
+export default class App extends Component {
 
   constructor(props) {
     super(props);
-    this.inputText = React.createRef()
-  }
-
-  calculate=()=>{
-    const multipaler = this.props.onMultipaler
-    console.log(this.inputText.current.value)
-    return multipaler(this.inputText.current.value)
   }
 
   render() {
-    const { state, onIncrement, onDecrement} = this.props;
     return (
-      <div className="App">
-        <p>
-          Clicked: {state} times
-        {' '}
-          <button onClick={onIncrement}>
-            +
-          </button>
-          <button onClick={onDecrement}>
-            -
-          </button>
-          <input type="text" defaultValue="0" ref={this.inputText}/>
-          <button onClick={this.calculate}>
-            x2
-          </button>
-        </p >
+      <div className="App" >
+        <Counters amount={2}/>
       </div>
     );
   }
 }
-
-export default App;
