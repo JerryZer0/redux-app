@@ -39,7 +39,7 @@ export default class Counter extends Component {
                     x
                 </button>
                 <button className="button" onClick={this.layer}>
-                    layer
+                Increment Async
                 </button>
             </p >
 
